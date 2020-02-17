@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 14, 2020 8:49:09 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.tuktuk.pojo.Admin" table="admin" catalog="tuktuk" optimistic-lock="version">
+        <id name="idadmin" type="java.lang.Integer">
+            <column name="idadmin" />
+            <generator class="identity" />
+        </id>
+        <property name="name" type="string">
+            <column name="name" length="45" />
+        </property>
+        <property name="contact" type="string">
+            <column name="contact" length="45" />
+        </property>
+        <property name="nic" type="string">
+            <column name="nic" length="45" />
+        </property>
+        <property name="username" type="string">
+            <column name="username" length="45" />
+        </property>
+        <property name="password" type="string">
+            <column name="password" length="45" />
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="status" />
+        </property>
+        <property name="level" type="int">
+            <column name="level" not-null="true" />
+        </property>
+        <property name="av" type="int">
+            <column name="av" not-null="true" />
+        </property>
+        <property name="btn" type="int">
+            <column name="btn" not-null="true" />
+        </property>
+        <property name="vh" type="int">
+            <column name="vh" not-null="true" />
+        </property>
+        <property name="co" type="int">
+            <column name="co" not-null="true" />
+        </property>
+        <property name="pa" type="int">
+            <column name="pa" not-null="true" />
+        </property>
+        <property name="st" type="int">
+            <column name="st" not-null="true" />
+        </property>
+        <property name="ad" type="int">
+            <column name="ad" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

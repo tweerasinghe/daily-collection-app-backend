@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 14, 2020 8:49:09 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.tuktuk.pojo.Payment" table="payment" catalog="tuktuk" optimistic-lock="version">
+        <id name="idpayment" type="java.lang.Integer">
+            <column name="idpayment" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="user" class="com.tuktuk.pojo.User" fetch="select">
+            <column name="user_iduser" />
+        </many-to-one>
+        <many-to-one name="vehicle" class="com.tuktuk.pojo.Vehicle" fetch="select">
+            <column name="vehicle_idvehicle" not-null="true" />
+        </many-to-one>
+        <property name="date" type="string">
+            <column name="date" length="45" />
+        </property>
+        <property name="time" type="string">
+            <column name="time" length="45" />
+        </property>
+        <property name="cash" type="java.lang.Double">
+            <column name="cash" precision="22" scale="0" />
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="status" />
+        </property>
+        <property name="payble" type="java.lang.Integer">
+            <column name="payble" />
+        </property>
+        <property name="balance" type="java.lang.Double">
+            <column name="balance" precision="22" scale="0" />
+        </property>
+        <property name="paymentDate" type="string">
+            <column name="paymentDate" length="45" />
+        </property>
+        <property name="paymentTime" type="string">
+            <column name="paymentTime" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 14, 2020 8:49:09 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.tuktuk.pojo.Vehicle" table="vehicle" catalog="tuktuk" optimistic-lock="version">
+        <id name="idvehicle" type="java.lang.Integer">
+            <column name="idvehicle" />
+            <generator class="identity" />
+        </id>
+        <property name="qrid" type="string">
+            <column name="QRID" length="45" />
+        </property>
+        <property name="vehNo" type="string">
+            <column name="vehNo" length="45" />
+        </property>
+        <property name="ownerName" type="string">
+            <column name="ownerName" length="150" />
+        </property>
+        <property name="mobile1" type="string">
+            <column name="mobile1" length="45" />
+        </property>
+        <property name="mobile2" type="string">
+            <column name="mobile2" length="45" />
+        </property>
+        <property name="address" type="string">
+            <column name="address" length="200" />
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="status" />
+        </property>
+        <property name="date" type="string">
+            <column name="date" length="45" />
+        </property>
+        <property name="time" type="string">
+            <column name="time" length="45" />
+        </property>
+        <set name="payments" table="payment" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="vehicle_idvehicle" not-null="true" />
+            </key>
+            <one-to-many class="com.tuktuk.pojo.Payment" />
+        </set>
+    </class>
+</hibernate-mapping>
