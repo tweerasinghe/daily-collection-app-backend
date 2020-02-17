@@ -1,2 +1,1 @@
-# dailyCollectionBackend
-Daily Fee Collection App - Back-end
+# daily-collection-app-backend
