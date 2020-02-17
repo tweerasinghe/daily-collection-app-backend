@@ -1,1 +1,0 @@
-# daily-collection-app-backend
